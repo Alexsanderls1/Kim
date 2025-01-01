@@ -1,0 +1,817 @@
+/* Cores de fundo individuais para cada sessão */
+#inicio {
+    background-color: #fff; /* Cinza claro */
+}
+
+#trabalhos {
+    background-color: #DFBDD4; /* Um tom mais escuro */
+}
+
+#sobre {
+    background-color: #dee2e6; /* Tom médio */
+}
+
+#materiais {
+    background-color: #ced4da; /* Outro tom de cinza */
+}
+
+#contato {
+    background-color: #adb5bd; /* Cinza mais escuro */
+}
+
+/* Estilização do layout geral */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+
+.full-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 20px;
+    background-color: #faf5d3;
+}
+
+/* Estilo do header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+}
+
+/* Estilização da primeira seção */
+.text-content {
+    flex: 1;
+    text-align: left;
+    margin: 100px;
+}
+
+.text-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    background-color: #25d366;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.whatsapp-button img {
+    margin-right: 10px;
+    height: 20px;
+}
+
+.carousel {
+    border-radius: 15px;
+    position: relative;
+    width: 40%; /* Ajuste o tamanho conforme necessário */
+    height: 90%; /* Ajuste o tamanho conforme necessário */
+    overflow: hidden; /* Esconde o que ultrapassa os limites */
+    margin: 0 auto; /* Centraliza o carrossel */
+}
+
+.carousel-track {
+    display: flex; /* Coloca as imagens lado a lado */
+    transition: transform 0.5s ease-in-out; /* Transição suave */
+}
+
+.carousel-track img {
+    width: 100%; /* As imagens ocupam toda a largura disponível */
+    height: auto; /* Mantém a proporção das imagens */
+    flex-shrink: 0; /* Evita encolher as imagens */
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background-color: #333;
+}
+
+
+/* Sessão Trabalhos */
+/* Configuração para telas grandes */
+.works-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as imagens quebrem para uma nova linha */
+    justify-content: center; /* Centraliza as imagens na linha */
+    gap: 20px; /* Espaçamento entre as imagens */
+    padding: 40px 20px; /* Espaçamento interno na seção */
+}
+
+.works-gallery img {
+    width: calc(33.33% - 20px); /* Cada imagem ocupa um terço da largura com espaçamento */
+    max-width: 360px; /* Define um tamanho máximo para as imagens */
+    height: auto; /* Mantém a proporção das imagens */
+    border-radius: 10px; /* Adiciona cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para hover */
+}
+
+.works-gallery img:hover {
+    transform: scale(1.05); /* Amplia levemente a imagem ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Realça a sombra ao passar o mouse */
+}
+
+/* Botões de navegação */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    display: none; /* Esconde os botões por padrão */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Estilo para a seção "Materiais" */
+#materiais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+.materials-content {
+    flex: 1;
+    text-align: left;
+    max-width: 1200px;
+}
+
+.materials-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #444;
+    margin-left: 180px;
+}
+
+.materials-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-left: 180px;
+}
+
+.materials-gallery {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    margin: 60px;
+}
+
+.materials-gallery img {
+    width: 500px;
+    height: 400px;
+    border-radius: 10px;
+    position: absolute;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.materials-gallery img:nth-child(1) {
+    z-index: 4;
+    top: 0;
+    left: 0;
+}
+
+.materials-gallery img:nth-child(2) {
+    z-index: 3;
+    top: 20px;
+    left: 20px;
+}
+
+.materials-gallery img:nth-child(3) {
+    z-index: 2;
+    top: 40px;
+    left: 40px;
+}
+
+.materials-gallery img:nth-child(4) {
+    z-index: 1;
+    top: 60px;
+    left: 60px;
+}
+
+.materials-gallery img:hover {
+    transform: scale(1.05);
+    z-index: 5; /* Traz a imagem para frente ao passar o mouse */
+}
+
+
+/* Estilo para a seção "Sobre" */
+#sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.about-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reels-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.reels-container video {
+    width: calc(33.33% - 20px);
+    aspect-ratio: 9 / 16; /* Proporção vertical (estilo reels) */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Garante que o vídeo preencha o espaço corretamente */
+    transition: transform 0.3s ease;
+}
+
+.reels-container video:hover {
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+#contato {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinha o conteúdo à esquerda */
+    height: 100vh; /* Altura total da tela */
+    padding: 0 5%;
+    background-color: #fafafa; /* Fundo claro */
+    gap: 50px; /* Espaçamento entre o formulário e os botões */
+}
+
+.contact-form {
+    width: 40%; /* Largura do formulário */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os campos */
+}
+
+.contact-form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px; /* Espaçamento entre o texto e o campo */
+    color: #333; /* Cor do texto */
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Borda sutil */
+    border-radius: 25px;
+    background-color: transparent; /* Campos transparentes */
+    color: #333; /* Cor do texto nos campos */
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    height: 120px; /* Altura padrão */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: #007bff; /* Borda azul no foco */
+    outline: none; /* Remove o contorno padrão */
+}
+
+.contact-form button {
+    width: 35%;
+    padding: 12px;
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Garante visibilidade */
+    z-index: 1; /* Prioridade do botão */
+    margin-top: 4370px;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* Cor mais escura no hover */
+}
+
+/* Estilo dos botões das redes sociais */
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os botões */
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; /* Espaçamento entre o ícone e o texto */
+    padding: 10px 20px;
+    width: fit-content;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-button img {
+    width: 30px; /* Tamanho do ícone */
+    height: 30px;
+    border-radius: 50%; /* Torna o ícone circular */
+}
+
+.social-button span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Cor do texto */
+}
+
+.social-button:hover {
+    transform: scale(1.05); /* Efeito de zoom */
+    background-color: #f0f0f0;
+}
+
+/* Estilização do rodapé */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.footer-logo img {
+    height: 50px;
+}
+
+.footer-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-menu li {
+    display: inline;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-social-icons img {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.footer-address {
+    text-align: right;
+    font-size: 0.9em;
+    color: #666;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Estilos específicos para telas entre 768px e 1024px */
+    .full-page {
+        flex-direction: column; /* Organiza elementos em coluna */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+    .carousel {
+    border-radius: 15px;
+    position: relative;
+    width: 100%; /* Ajuste o tamanho conforme necessário */
+    height: 80%; /* Ajuste o tamanho conforme necessário */
+    overflow: hidden; /* Esconde o que ultrapassa os limites */
+    margin: 0 auto; /* Centraliza o carrossel */
+}
+
+.carousel-track {
+    display: flex; /* Coloca as imagens lado a lado */
+    transition: transform 0.5s ease-in-out; /* Transição suave */
+}
+
+.carousel-track img {
+    width: 100%; /* As imagens ocupam toda a largura disponível */
+    height: auto; /* Mantém a proporção das imagens */
+    flex-shrink: 0; /* Evita encolher as imagens */
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background-color: #333;
+}
+
+    .text-content {
+        text-align: center; /* Centraliza os textos */
+        margin: 10px 10px; /* Reduz o espaçamento */
+    }
+
+    .contact-form button {
+        width: 40%;
+        margin-top: 4380px;
+}
+
+.social-buttons {
+        flex-direction: row; /* Organiza os botões lado a lado */
+        gap: 10px; /* Espaçamento entre os botões */
+        margin-top: 30px;
+    }
+
+
+    #materiais {
+        flex-direction: column; /* Garante que o conteúdo seja disposto verticalmente */
+        align-items: center; /* Centraliza o conteúdo horizontalmente */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    /* Ajusta o texto para telas menores */
+    #materiais h2 {
+        margin-left:10px; /* Espaçamento superior e inferior para o título */
+        font-size: 1.8rem; /* Ajusta o tamanho do título em telas menores */
+    }
+
+    #materiais p {
+        text-align: justify; /* Justifica o texto */
+        padding-left: 10px; /* Diminui a margem esquerda */
+        padding-right: 10px; /* Diminui a margem direita */
+        font-size: 1rem; /* Ajusta o tamanho da fonte para dispositivos menores */
+        margin: 0 auto; /* Garante que o texto não tenha margens laterais excessivas */
+        margin-top: 40px;
+    }
+
+    /* Ajuste das imagens para aparecerem corretamente */
+    .materials-gallery {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    margin: 10px;
+    margin-right: 470px;
+    margin-top: -300px;
+}
+
+.materials-gallery img {
+    width: 500px;
+    height: 400px;
+    border-radius: 10px;
+    position: absolute;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.materials-gallery img:nth-child(1) {
+    z-index: 4;
+    top: 0;
+    left: 0;
+}
+
+.materials-gallery img:nth-child(2) {
+    z-index: 3;
+    top: 20px;
+    left: 20px;
+}
+
+.materials-gallery img:nth-child(3) {
+    z-index: 2;
+    top: 40px;
+    left: 40px;
+}
+
+.materials-gallery img:nth-child(4) {
+    z-index: 1;
+    top: 60px;
+    left: 60px;
+}
+.materials-gallery img:hover {
+    transform: none;
+    z-index: none; /* Traz a imagem para frente ao passar o mouse */
+}
+}
+
+/* Estilização responsiva */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 70%;
+        right: 0;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Primeira seção: Carrossel na parte superior e textos na parte inferior */
+    .full-page {
+        flex-direction: column; /* Organiza elementos em coluna */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+    .carousel {
+        width: 65%; /* Ocupa toda a largura da tela */
+        height: auto; /* Mantém a proporção */
+    }
+    .text-content {
+        text-align: center; /* Centraliza os textos */
+        margin: 20px 10px; /* Reduz o espaçamento */
+    }
+
+    /* Segunda seção: Uma imagem por vez com botões de navegação */
+    /* Alterando a exibição da galeria para uma imagem por vez */
+    .works-gallery {
+        height: 100vh; min-height: 100vh;
+        display: flex;
+        flex-direction: column; /* Exibe as imagens uma por vez */
+        justify-content: center;
+        align-items: center;
+        height: auto; /* Corrige a altura da seção */
+    }
+
+    .works-gallery img {
+        display: none; /* Inicialmente, esconde todas as imagens */
+        width: 100%; /* A imagem ocupa toda a largura disponível */
+        max-width: none; /* Remove a limitação de max-width */
+        border-radius: 10px;
+        box-shadow: none;
+    }
+
+    .works-gallery img.active {
+        display: block; /* Exibe apenas a imagem ativa */
+    }
+
+    /* Exibe os botões de navegação */
+    .prev, .next {
+        display: block; /* Exibe os botões apenas em dispositivos móveis */
+    }
+
+    /* Ajuste para garantir que os botões de navegação não afetem outras seções */
+    #trabalhos {
+        position: relative; /* Garante que os botões fiquem dentro da seção */
+    }
+
+    /* Sessão Materiais: Textos na parte superior e imagens na parte inferior */
+    /* No celular, os textos ficam centralizados e justificados */
+    #materiais {
+        flex-direction: column; /* Garante que o conteúdo seja disposto verticalmente */
+        align-items: center; /* Centraliza o conteúdo horizontalmente */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    /* Ajusta o texto para telas menores */
+    #materiais h2 {
+        margin-left:10px; /* Espaçamento superior e inferior para o título */
+        font-size: 1.8rem; /* Ajusta o tamanho do título em telas menores */
+    }
+
+    #materiais p {
+        text-align: justify; /* Justifica o texto */
+        padding-left: 10px; /* Diminui a margem esquerda */
+        padding-right: 10px; /* Diminui a margem direita */
+        font-size: 1rem; /* Ajusta o tamanho da fonte para dispositivos menores */
+        margin: 0 auto; /* Garante que o texto não tenha margens laterais excessivas */
+        margin-top: 40px;
+    }
+
+    /* Ajuste das imagens para aparecerem corretamente */
+    .materials-gallery {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    margin: 10px;
+    margin-right: 370px;
+    margin-top: -80px;
+}
+
+.materials-gallery img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    position: absolute;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.materials-gallery img:nth-child(1) {
+    z-index: 4;
+    top: 0;
+    left: 0;
+}
+
+.materials-gallery img:nth-child(2) {
+    z-index: 3;
+    top: 20px;
+    left: 20px;
+}
+
+.materials-gallery img:nth-child(3) {
+    z-index: 2;
+    top: 40px;
+    left: 40px;
+}
+
+.materials-gallery img:nth-child(4) {
+    z-index: 1;
+    top: 60px;
+    left: 60px;
+}
+.materials-gallery img:hover {
+    transform: none;
+    z-index: none; /* Traz a imagem para frente ao passar o mouse */
+}
+
+    /* Sessão Contato: Formulário na parte superior e botões na parte inferior */
+    #contato {
+        flex-direction: column; /* Reorganiza em coluna */
+        align-items: center; /* Centraliza elementos */
+    }
+    .contact-form {
+        width: 90%; /* Reduz a largura */
+    }
+
+    .contact-form button {
+        width: 80%;
+        margin-top: 4230px;
+}
+    .social-buttons {
+        flex-direction: row; /* Organiza os botões lado a lado */
+        gap: 10px; /* Espaçamento entre os botões */
+        margin-top: 30px;
+    }
+
+    /* Footer: Elementos organizados em coluna */
+    footer {
+        flex-direction: column; /* Elementos em coluna */
+        align-items: center; /* Centraliza tudo */
+        text-align: center; /* Textos centralizados */
+    }
+    .footer-menu {
+        flex-direction: column; /* Menu como lista vertical */
+        gap: 5px; /* Espaçamento entre os itens */
+    }
+    .footer-social-icons {
+        flex-direction: column; /* Ícones em coluna */
+        margin-top: 10px; /* Espaçamento adicional */
+    }
+
+}
+
+@media (max-width: 480px) {
+
+}
